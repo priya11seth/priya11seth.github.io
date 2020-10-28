@@ -9,13 +9,14 @@ async function getData() {
     }
 }
 async function renderUsers() {
-    let users = await getData();
+    let jsonData = await getData();
+	console.log(jsonData);
     let html = '';
-    users.forEach(user => {
+    jsonData.items.forEach(data => {
         let htmlSegment = `<div class="user">
-                            <img src="${user.profileURL}" >
-                            <h2>${user.firstName} ${user.lastName}</h2>
-                            <div class="email"><a href="email:${user.email}">${user.email}</a></div>
+                            <img src="${data.image}" >
+                            <h2>${data.name}</h2>
+                            
                         </div>`;
 
         html += htmlSegment;
