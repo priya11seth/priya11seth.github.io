@@ -19,7 +19,7 @@ async function renderUsers() {
 								<div class="card_content">
 								 <p class="card_text">${data.name}</p>
 								 <div class="btn-div"> 
-									<h2 class="card_title">${data.price.actual}</h2>
+									<h2 class="card_title"><span class="display-price"><i class="fa fa-inr" aria-hidden="true"></i>${data.price.display}</span> <i class="fa fa-inr" aria-hidden="true"></i>${data.price.actual}</h2>
 									<button class="btn card_btn">Add to Cart</button>
 								 </div>
 								  

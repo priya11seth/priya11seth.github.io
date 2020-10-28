@@ -34,7 +34,8 @@ h1 {
 
 img {
   height: auto;
-  max-width: 100%;
+  max-width: 400px;
+  width: 100%;
   vertical-align: middle;
 }
 
@@ -122,3 +123,26 @@ img {
 .card_image {
 	text-align: center
 }
+.display-price{
+	text-decoration-line: line-through;
+    text-decoration-style: solid;
+    font-weight: 400;
+	
+}
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.columnLeft {
+  flex: 70%;
+  padding: 10px;
+ 
+}
+.columnRight {
+  flex: 30%;
+  padding: 10px;
+ 
+}
+
+
