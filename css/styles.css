@@ -1,34 +1,124 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
-* {
-  /* border: 1px solid red; */
-  /* -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; */
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html,
+html {
+  background-color: #ffffff;
+}
+
 body {
-  height: 100%;
-}
-.container {
-    display: flex;
-    flex-direction: row;
-}
-.user {
-    background-color: #fff;
-    padding: 2rem;
-    border: solid 1px #ccd0d4;
-    border-radius: 0.3rem;
-    text-align: center;
-    margin: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+  color: #272727;
+  font-family: 'Quicksand', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
 }
 
-.container img {
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
     
-    padding: 1rem;
-    background-color: #f4f4f4;
-	width:200px;
-	height:200px;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn-div {
+  
+ 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.btn{
+	color: #9cbfdb;
+  
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  cursor: pointer;
+  border: 1px solid #9cbfdb;
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 0.5px solid #e0d6d6;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #efefef 40%, #efefef 100%);
+}
+
+.card_title {
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+.card_image {
+	text-align: center
+}
