@@ -28,7 +28,7 @@ body {
 
 h1 {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 700;
     
 }
 
@@ -122,6 +122,12 @@ img {
 }
 .card_image {
 	text-align: center
+	background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    margin: 1rem;
+    
 }
 .display-price{
 	text-decoration-line: line-through;
@@ -144,5 +150,161 @@ img {
   padding: 10px;
  
 }
+
+.discount {
+	
+	background: limegreen;
+    width: 70px;
+    color: #ffff;
+    /* padding-left: 10px; */
+    text-align: center;
+    padding-top: 5px;
+    font-size: .875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.table-div {
+	display: flex;
+     margin: 0;
+	padding: 0;
+}
+.table {
+  background: #ffffff;
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 1.8em;
+}
+.layout-inline > * {
+  display: inline-block;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.th {
+  background: #b1b1b1;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  justify-content:space-between;
+}
+.tf {
+  background: #ffffff;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 1.2em; 
+  border:1px solid #b1b1b1;
+}
+
+.tf p {
+  color: #000;
+  font-weight: bold;
+}
+
+.col {
+  padding: 1em;
+
+}
+
+.col-pro {
+  width: 17%;
+}
+
+.col-pro > * {
+  vertical-align: middle;
+}
+
+.col-qty {
+  text-align: center;
+  width: 40%;
+}
+
+.col-numeric p {
+  font: bold 0.8em helvetica;
+}
+
+.col-total p {
+  color: #12c8b1;
+}
+
+.tf .col {
+  
+}
+.row-table {
+	justify-content: space-between;
+	display:flex;
+	
+}
+.row > div {
+  vertical-align: middle;
+}
+
+.row-bg2 {
+  background: #f7f7f7;
+}
+
+.visibility-cart {
+  position: absolute;
+  color: #fff;
+  top: 0.5em;
+  right: 0.5em;
+  font:  bold 2em arial;
+  border: 0.16em solid #fff;
+  border-radius: 2.5em;
+  padding: 0 0.22em 0 0.25em ;
+}
+
+.col-qty > * {
+  vertical-align: middle; 
+}
+
+.col-qty > input {
+  max-width: 2.6em;
+}
+
+
+a.qty {
+  width: 1em;
+  line-height: 1em;
+  border-radius: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  background: #43ace3;  
+  color: #fff;
+}
+
+a.qty:hover {
+  background: #3b9ac6;
+}
+.msg{
+	text-align: center;
+    width: 90%;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+.headerDiv{
+	display:inline-flex;
+	width:100%;
+}
+.msgSpan{
+	background: limegreen;
+	color: white;
+	font-weight : 700;
+	padding: 5px;
+	
+}
+.orderTotal
+{
+	background: #b1b1b1;
+}
+
 
 
