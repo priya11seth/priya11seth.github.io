@@ -39,13 +39,20 @@ async function renderUsers() {
 }
 $(document).ready(function(){
 	renderUsers();
+	document.getElementById('tableDiv').style.display = 'none'; 
 });
 
 let arr = [];
 function addItem(index){
 	
-	document.getElementById("msgdiv").innerHTML = `<span class="msgSpan">${jsonData.items[index].name} added to cart</span>`;
-	console.log("hello",jsonData.items[index]);
+	var x = document.getElementById("snackbar");
+	 x.innerHTML = `${jsonData.items[index].name} added to cart`;
+	 x.className = "show";
+	 setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+	 
+	document.getElementById('noItem').style.display = 'none';
+	document.getElementById('tableDiv').style.display = 'block'; 
+	
 	jsonData.items[index]['quantity'] = 1;
 	arr.push(jsonData.items[index]);
 	createElementByArr();
@@ -61,26 +68,27 @@ function createElementByArr(){
         
 						<div class="col col-pro layout-inline">
 						  <img src="${data.image}" alt="kitten" />
-						  <p>${data.name}</p>
+						  
 						</div>
-						
+						<div class="col col-price col-numeric align-center ">
+						  <button class="plus-btn" type="button" name="button" onclick="plus('${index}')">
+							<img src="plus.svg" class="imgplus"/>
+						  </button>
+						  <input type="text" name="name" value="${data.quantity}" style="width:20px">
+						  <button class="minus-btn" type="button" name="button" onclick="minus('${index}')">
+							<img src="minus.svg" class="imgplus"/>
+						  </button>
+						</div>
 						<div class="col col-price col-numeric align-center ">
 						  <p>${data.price.display}</p>
 						</div>
 
-						<div class="quantity">
-						  <button class="plus-btn" type="button" name="button" onclick="plus('${index}')">
-							
-						  </button>
-						  <input type="text" name="name" value="${data.quantity}">
-						  <button class="minus-btn" type="button" name="button" onclick="minus('${index}')">
-							
-						  </button>
-						</div>
+						
         			</div>`;
 
         html += htmlSegment;
     });
+	
 	
 	var total = 0;
 	var discount = 0;
@@ -91,30 +99,36 @@ function createElementByArr(){
 		totalItems += data.quantity ;
 	})
 	
-	let tfSegment = `<div class="tf">
+	let tfSegment = `<hr/><div class="tf">
 						<div class="row-table layout-inline">
-						   <div class="col">
+						   <div >
 							 <p>Total</p>
 						   </div>
-						   <div class="col"></div>
+						   <div ></div>
 						 </div>
 						 <div class="row-table layout-inline">
-						   <div class="col">
-							 <p>Items(${totalItems}):</p>
+						   <div >
+							 Items(${totalItems})  :
 						   </div>
-						   <div class="col">${total}</div>
+						   <div ><i class="fa fa-inr" aria-hidden="true"></i>${total}</div>
 						 </div>
 						  <div class="row-table layout-inline">
-							   <div class="col">
-								 <p>Discount:</p>
+							   <div>
+								 Discount  :
 							   </div>
-								<div class="col">-${discount}</div>
-						</div>		
+								<div >-<i class="fa fa-inr" aria-hidden="true"></i>${discount}</div>
+							</div>	
+							<div class="row-table layout-inline">
+										   <div>
+											 Type Discount  :
+										   </div>
+											<div><i class="fa fa-inr" aria-hidden="true"></i>0</div>
+										</div>							
 						   <div class="row-table layout-inline orderTotal">
-							   <div class="col">
-								 <p>Order Total:</p>
+							   <div >
+								 Order Total  :
 							   </div>
-								<div class="col">${total - discount}</div>
+								<div ><i class="fa fa-inr" aria-hidden="true"></i>${total - discount}</div>
 						   
 						 
 						 </div></div>`;
@@ -123,6 +137,17 @@ function createElementByArr(){
 						 
 	let container = document.querySelector('.tbl');
     container.innerHTML = html;
+	
+	let container1 = document.querySelector('.dropdown-content');
+	
+	let drop ='';
+	drop = `<div class="closeDiv">
+				<h1>Items</h1>
+				<span class="close" onclick="hideDrop()">x</span></li>
+	
+			</div><hr/>`;
+	drop += html;
+    container1.innerHTML = drop;
 	
 	
 	
@@ -154,6 +179,23 @@ function plus(index) {
 	createElementByArr();
 	
 };
+
+function showDrop() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function hideDrop(){
+	
+	var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+}
+
 
 
 
